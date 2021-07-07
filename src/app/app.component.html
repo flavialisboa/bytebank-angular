@@ -1,6 +1,9 @@
-<app-nova-transferencia
-  (aoTransferir)="transferir($event)"
-></app-nova-transferencia>
-
-<p>Valor: {{ transferencia?.valor }}</p>
-<p>Destino: {{ transferencia?.destino }}</p>
+<header>
+  <a routerLink="extrato">Bytebank</a>
+  <!--muda apenas o componente interno-->
+  <a routerLink="nova-transferencia" routerLinkActive="ativo">Nova transferência</a>
+  <!--Adiciona a classe css ativo-->
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

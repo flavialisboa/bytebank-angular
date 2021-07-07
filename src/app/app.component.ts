@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransferenciaService } from './services/transferencia.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferencia: any;
 
-  transferir($event) {
-    console.log($event);
-    this.transferencia = $event;
-  }
+  constructor(private service: TransferenciaService) {}
+  /*transferir($event) {
+    const transferencia = { ...$event, data: new Date() };
+    ... = ao invés do objeto, está pegando apenas as propriedades internas dele e passando para dentro do objeto transferências
+
+    this.service.adicionar($event);     Antes era utilizado para a comunicação dos componentes, não mais necessário com o service
+  }*/
 }
